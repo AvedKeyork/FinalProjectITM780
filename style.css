@@ -28,7 +28,7 @@ header {
 
 .subtitle {
     font-style: italic;
-    color: #ccc;
+    color: #b3b3b3;
 }
 
 /* Navigation Menu */
@@ -41,7 +41,8 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Centers the nav items */
+    align-items: center; /* Aligns items vertically */
 }
 
 nav ul li {
@@ -54,6 +55,13 @@ nav ul li a {
     text-decoration: none;
     padding: 10px 15px;
     display: block;
+}
+
+/* Active State for Navigation Links */
+.nav-link.active {
+    color: #FFD700; /* Gold text to highlight active link */
+    font-weight: bold; /* Make it stand out */
+    border-bottom: 2px solid #FFD700; /* Highlight with a bottom border */
 }
 
 nav ul li a:hover {
@@ -92,31 +100,30 @@ button {
     color: white;
 }
 
-/* Enlarge Text Button */
-#enlargeTextButton {
-    position: fixed; /* Fixed at the top-right corner */
-    top: 20px;
-    right: 20px;
-    width: 180px; 
+/* Accessibility Buttons Container */
+.accessibility-buttons {
+    position: fixed;
+    top: 20px; /* Distance from the top */
+    left: 20px; /* Distance from the left */
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Add space between buttons */
 }
 
-#enlargeTextButton:hover {
-    background-color: #555;
-    color: #FFD700;
+/* Individual Buttons */
+.accessibility-buttons button {
+    width: 200px; /* Uniform button size */
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Add a smooth hover effect */
 }
 
-/* High-Contrast Button */
-#colorToggleButton {
-    position: fixed; /* Fixed at the bottom-left corner */
-    bottom: 20px;
-    left: 20px;
-    width: 100px; 
+.accessibility-buttons button:hover {
+    background-color: #007bff;
+    color: #ffffff; /* Gold text on hover */
 }
 
-#colorToggleButton:hover {
-    background-color: #555;
-    color: #FFD700;
-}
 
 /* Accessibility: Enlarged Text */
 .large-text {
@@ -133,4 +140,24 @@ button {
 .high-contrast a {
     color: gold;
     text-decoration: underline;
+}
+
+/* Add Spacing When Scrolling to a Section */
+section {
+    scroll-margin-top: 80px; /* Adjust based on your header height */
+    padding-top: 20px; /* Optional: Add extra space within sections */
+}
+
+/* Highlight Animation */
+@keyframes highlight {
+    from {
+        background-color: #cce5ff; /* Light yellow for the highlight */
+    }
+    to {
+        background-color: transparent;
+    }
+}
+
+section:target {
+    animation: highlight 1s ease-in-out; /* Highlight animation on scroll */
 }
