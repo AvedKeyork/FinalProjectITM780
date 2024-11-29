@@ -161,3 +161,26 @@ section {
 section:target {
     animation: highlight 1s ease-in-out; /* Highlight animation on scroll */
 }
+
+/* Return to Top Button */
+#returnToTopButton {
+    position: fixed; /* Stays in place while scrolling */
+    bottom: 20px; /* Distance from the bottom of the viewport */
+    right: 20px; /* Distance from the right of the viewport */
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50px; /* Rounded button */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    cursor: pointer;
+    z-index: 1000; /* Ensures it stays above other elements */
+    opacity: 1; /* Fully visible at all times */
+    transform: scale(1); /* Default size */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+}
+
+#returnToTopButton:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+

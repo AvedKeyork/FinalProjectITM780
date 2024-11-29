@@ -67,3 +67,16 @@ window.onload = function () {
         colorToggleButton.addEventListener('click', toggleColorScheme);
     }
 };
+
+document.addEventListener("DOMContentLoaded", () => {
+    const returnToTopButton = document.getElementById("returnToTopButton");
+
+    // Scroll to Top on Button Click
+    returnToTopButton.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth" // Smooth scrolling effect
+        });
+    });
+});
+
